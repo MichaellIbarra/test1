@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/carrusel.css')}}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href=" {{url_for('static', filename='css/main.css')}} " rel="stylesheet">
+    <title>By Cin't</title>
+</head>
+
+<body>
+    <div class="p-4 text-white bg-red-500">
+        Logo
+    </div>
+    <!--menu desplegable-->
+    <div class="hover:bg-sky-700">
+        <nav class="px-4 py-4 sm:flex sm:items-center sm:justify-between bg-sky-500 hover:bg-sky-700">
+            <section class="flex justify-between">
+                <button class="text-gray-700 sm:hidden">
+                    <svg class="w-6 h-6 fill-current" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                        <!--ícono de "hamburguesa" o "menú"-->
+                        <path
+                            d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z">
+                        </path>
+                        <!--ícono de "hamburguesa" o "menú"-->
+                    </svg>
+                </button>
+            </section>
+            <div class="flex flex-col items-start gap-2 mt-3 sm:flex-row sm:m-0">
+                <button
+                    class="w-full px-2 text-left rounded text-stone-50 hover:bg-stone-50 hover:text-stone-50">Blog</button>
+                <button class="w-full px-2 text-left rounded text-stone-50 hover:text-stone-50">Docs</button>
+                <button
+                    class="w-full px-2 text-left rounded text-stone-50 hover:bg-stone-50 hover:text-stone-50">Contacto</button>
+            </div>
+        </nav>
+    </div>
+    <!--Fin menu desplegable-->
+    <!-- Carrusel -->
+    <div class="relative carousel-container">
+        <div class="carousel-inner">
+            <div class="flex items-center justify-center h-64 text-white bg-blue-500 carousel-item">Slide 1</div>
+            <div class="flex items-center justify-center h-64 text-white bg-green-500 carousel-item">Slide 2</div>
+            <div class="flex items-center justify-center h-64 text-white bg-red-500 carousel-item">Slide 3</div>
+        </div>
+        <button id="prev" class="absolute left-0 px-4 py-2 text-white transform -translate-y-1/2 top-1/2"></button>
+        <button id="next" class="absolute right-0 px-4 py-2 text-white transform -translate-y-1/2 top-1/2"></button>
+    </div>
+    <!-- Fin de Carrusel -->
+    <!--cómo funcionan tanto los estilos en línea como la manipulación de clases con JavaScript  -->
+
+
+    <!--cómo funcionan tanto los estilos en línea como la manipulación de clases con JavaScript  -->
+
+    <!--Dom-->
+    <button id="cambiar" class="px-6 py-4 mt-4 text-center text-white rounded bg-emerald-800 hover:bg-emerald-700">
+        cambiar texto
+        <p id="texto">
+            Texto original
+        </p>
+    </button>
+    <!--Fin Dom-->
+    <!--pie de pagina-->
+    <footer class="py-6 mt-10 text-white bg-gray-900">
+        <div class="container px-6 mx-auto text-center">
+            <p class="text-sm">&copy; {{ year }} Todos los derechos reservados.</p>
+            <p class="text-sm">Desarrollado con ❤️ por <a href="https://tusitio.com" class="underline">Juana Teresa</a>
+            </p>
+        </div>
+    </footer>
+    <!-- fin pie de pagina-->
+
+    <!-- Incluir el archivo JavaScript -->
+    <script src="{{ url_for('static', filename='js/dom.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/carrusel.js') }}"></script>
+</body>
+
+</html>
